@@ -1,11 +1,7 @@
 name = "lpm-cli"
-version = "1.0.0"
-description = "Lua Project Manager CLI"
-authors = ["Anildo"]
-license = "MIT"
+version = "0.1.0"
+author = "Anildo"
+description = "CLI for Lua Project Manager"
 
 [dependencies]
-lpm-test = "0.1.0"
-
-[scripts]
-test = "lua tests/test_runner.lua"
+lpm-core = "0.1.0"

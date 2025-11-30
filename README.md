@@ -1,53 +1,79 @@
-# LPM CLI
+# LPM CLI (Interface de Linha de Comando)
 
-Command-line interface for the LPM (Lua Package Manager) ecosystem.
+Interface de linha de comando para o ecossistema LPM (Lua Package Manager).
 
-## Features
+## Funcionalidades
 
-- **Project Initialization**: Create new LPM projects
-- **Package Management**: Install and manage dependencies
-- **Archive Creation**: Package projects for distribution
-- **TOML Support**: Parse and generate TOML manifests
-- **Pure Lua**: No external dependencies
+- **Inicialização de Projetos**: Crie novos projetos LPM
+- **Gerenciamento de Pacotes**: Instale e gerencie dependências
+- **Criação de Arquivos**: Empacote projetos para distribuição
+- **Suporte a TOML**: Leitura e geração de manifestos TOML
+- **Puro Lua**: Sem dependências externas
+- **Carregamento Automático**: Suporte a autoload de módulos
 
-## Installation
+## Instalação
 
 ```bash
-# Clone the repository
+# Clone o repositório
 git clone https://github.com/4nild0/lpm-cli.git
 cd lpm-cli
 
-# Run tests
+# Execute os testes
 lua tests.lua
 ```
 
-## Usage
+## Uso Básico
 
 ```bash
-# Initialize a new project
-lua main.lua init my-project
+# Inicializar um novo projeto
+lua main.lua init meu-projeto
 
-# Install a package
-lua main.lua install package-name
+# Instalar um pacote
+lua main.lua install nome-do-pacote
 
-# Create a package archive
-lua main.lua pack my-project
+# Criar um pacote compactado
+lua main.lua pack meu-projeto
+
+# Publicar um pacote
+lua main.lua publish
 ```
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 lpm-cli/
 ├── src/
-│   ├── archive.lua    # Archive creation (zip)
-│   ├── fs.lua         # File system operations
-│   ├── project.lua    # Project initialization
-│   └── toml.lua       # TOML parsing/encoding
-├── tests/
-│   ├── test_archive.lua
-│   ├── test_fs.lua
-│   ├── test_project.lua
-│   └── test_toml.lua
+│   ├── commands/      # Comandos da CLI
+│   │   ├── init.lua   # Inicialização de projetos
+│   │   ├── install.lua # Instalação de pacotes
+│   │   └── ...
+│   ├── cli.lua        # Núcleo da CLI
+│   ├── cli_init.lua   # Inicialização dos comandos
+│   ├── network.lua    # Requisições HTTP
+│   └── cache.lua      # Gerenciamento de cache
+├── tests/             # Testes unitários
+│   ├── test_cli.lua
+│   └── ...
+└── main.lua           # Ponto de entrada
+```
+
+## Configuração
+
+Crie um arquivo `.env` na raiz do projeto para configurar:
+
+```
+SERVER_URL=http://localhost:8080
+```
+
+## Desenvolvimento
+
+1. Faça um fork do repositório
+2. Crie uma branch para sua feature
+3. Envie um pull request
+
+## Licença
+
+MIT
 ├── main.lua           # CLI entry point
 └── project.toml       # Project manifest
 ```

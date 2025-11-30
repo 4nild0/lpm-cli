@@ -1,0 +1,6 @@
+name = "test-project"
+version = "0.1.0"
+author = "Unknown"
+description = "A Lua project"
+
+[dependencies]
