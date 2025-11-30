@@ -9,7 +9,7 @@ end
 function M.run(args)
     if #args == 0 then
         print("Usage: lpm <command> [args]")
-        print("Commands: init, create, build, validate, pack, install, publish")
+        print("Commands: init, create, build, run, validate, pack, install, publish")
         return
     end
     
