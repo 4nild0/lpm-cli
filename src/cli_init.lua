@@ -1,4 +1,4 @@
-local cli = require("cli")
+local command_line_interface = require("cli")
 
 local init_cmd = require("commands.init")
 local create_cmd = require("commands.create")
@@ -9,13 +9,13 @@ local pack_cmd = require("commands.pack")
 local install_cmd = require("commands.install")
 local publish_cmd = require("commands.publish")
 
-cli.register("init", init_cmd.execute)
-cli.register("create", create_cmd.execute)
-cli.register("build", build_cmd.execute)
-cli.register("run", run_cmd.execute)
-cli.register("validate", validate_cmd.execute)
-cli.register("pack", pack_cmd.execute)
-cli.register("install", install_cmd.execute)
-cli.register("publish", publish_cmd.execute)
+command_line_interface.register("init", init_cmd.execute)
+command_line_interface.register("create", create_cmd.execute)
+command_line_interface.register("build", build_cmd.execute)
+command_line_interface.register("run", run_cmd.execute)
+command_line_interface.register("validate", validate_cmd.execute)
+command_line_interface.register("pack", pack_cmd.execute)
+command_line_interface.register("install", install_cmd.execute)
+command_line_interface.register("publish", publish_cmd.execute)
 
-return cli
+return command_line_interface

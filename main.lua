@@ -14,12 +14,14 @@ local cli_main  = require("cli_init")
 local env_file = script_path .. ".env"
 local env_data = EnvLoader.load(env_file)
 
-if env_data then
-    _G.ENV = env_data
-else
+if not env_data then
     _G.ENV = {
         SERVER_URL = "http://localhost:8080"
     }
+end
+
+if env_data then
+    _G.ENV = env_data
 end
 
 local args = {}
